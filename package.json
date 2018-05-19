@@ -1,0 +1,44 @@
+{
+    "name": "iar2gcc",
+    "displayName": "iar2gcc",
+    "description": "an vscode extension that converts iar project into gcc tool chain.",
+    "version": "0.0.1",
+    "publisher": "AlexYzhov",
+    "engines": {
+        "vscode": "^1.23.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:main.run"
+    ],
+    "main": "./out/main",
+    "contributes": {
+        "commands": [
+            {
+                "command": "main.run",
+                "title": "Activate"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "main.run",
+                "key": "ctrl+R"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
